@@ -23,7 +23,7 @@ public class GiphyApiClientTests {
     @Value("${giphy.api.key}")
     private String apiKey;
 
-    @Value("${giphy.mock_server_port}")
+    @Value("${mock.server_port}")
     private int mockServerPort;
 
     @BeforeEach

@@ -23,7 +23,7 @@ public class GiphyDownloadClientTests {
     private WireMockServer wireMockServer;
     private GiphyDownloadClient giphyDownloadClient;
 
-    @Value("${giphy.mock_server_port}")
+    @Value("${mock.server_port}")
     private int mockServerPort;
 
     @BeforeEach
