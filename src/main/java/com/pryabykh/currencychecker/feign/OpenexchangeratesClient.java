@@ -13,5 +13,5 @@ public interface OpenexchangeratesClient {
 
     @GetMapping("/historical/{date}.json")
     CurrencyResponseDto fetchByDate(@RequestParam("app_id") String appId,
-                                           @PathVariable("date") String date);
+                                    @PathVariable("date") String date);
 }

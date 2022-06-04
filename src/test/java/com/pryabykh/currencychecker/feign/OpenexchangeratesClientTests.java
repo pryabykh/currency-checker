@@ -75,12 +75,12 @@ public class OpenexchangeratesClientTests {
     }
 
     private String shapeCurrencyTodayJsonResponse() throws IOException {
-        String jsonFilePath = "classpath:currencyTodayResponse.json";
+        String jsonFilePath = "classpath:currencyRubGreaterResponse.json";
         return new String(resourceLoader.getResource(jsonFilePath).getInputStream().readAllBytes());
     }
 
     private String shapeCurrencyYesterdayJsonResponse() throws IOException {
-        String jsonFilePath = "classpath:currencyYesterdayResponse.json";
+        String jsonFilePath = "classpath:currencyRubLessResponse.json";
         return new String(resourceLoader.getResource(jsonFilePath).getInputStream().readAllBytes());
     }
 
