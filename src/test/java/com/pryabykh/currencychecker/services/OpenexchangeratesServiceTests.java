@@ -41,6 +41,7 @@ public class OpenexchangeratesServiceTests {
                 .thenReturn(shapeGreaterCurrencyResponse());
         Mockito.when(openexchangeratesClient.fetchByDate(Mockito.anyString(), Mockito.anyString()))
                 .thenReturn(shapeLessCurrencyResponse());
+
         boolean biggerThanYesterday = currencyService.isCurrencyBiggerThanYesterday(currencyCode);
         Assertions.assertTrue(biggerThanYesterday);
     }
@@ -52,6 +53,7 @@ public class OpenexchangeratesServiceTests {
                 .thenReturn(shapeLessCurrencyResponse());
         Mockito.when(openexchangeratesClient.fetchByDate(Mockito.anyString(), Mockito.anyString()))
                 .thenReturn(shapeGreaterCurrencyResponse());
+
         boolean biggerThanYesterday = currencyService.isCurrencyBiggerThanYesterday(currencyCode);
         Assertions.assertFalse(biggerThanYesterday);
     }
@@ -68,6 +70,7 @@ public class OpenexchangeratesServiceTests {
                 .thenReturn(shapeLessCurrencyResponse());
         Mockito.when(openexchangeratesClient.fetchByDate(Mockito.anyString(), Mockito.anyString()))
                 .thenReturn(shapeGreaterCurrencyResponse());
+
         assertThrows(CurrencyCodeNotFoundException.class, () ->
                 currencyService.isCurrencyBiggerThanYesterday(nonExistentCurrencyCode));
     }
@@ -78,6 +81,7 @@ public class OpenexchangeratesServiceTests {
                 .thenReturn(new CurrencyResponseDto());
         Mockito.when(openexchangeratesClient.fetchByDate(Mockito.anyString(), Mockito.anyString()))
                 .thenReturn(new CurrencyResponseDto());
+
         assertThrows(CurrencyRatesIsNullException.class, () ->
                 currencyService.isCurrencyBiggerThanYesterday(currencyCode));
     }
